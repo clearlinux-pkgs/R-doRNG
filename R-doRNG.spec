@@ -4,19 +4,12 @@
 #
 Name     : R-doRNG
 Version  : 1.7.1
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Summary  : Generic Reproducible Parallel Backend for 'foreach' Loops
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-doMPI
-Requires: R-doParallel
-Requires: R-foreach
-Requires: R-iterators
-Requires: R-pkgmaker
-Requires: R-rbenchmark
-Requires: R-rngtools
 BuildRequires : R-doMPI
 BuildRequires : R-doParallel
 BuildRequires : R-foreach
@@ -24,7 +17,7 @@ BuildRequires : R-iterators
 BuildRequires : R-pkgmaker
 BuildRequires : R-rbenchmark
 BuildRequires : R-rngtools
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 BuildRequires : texlive
 
 %description
@@ -39,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1531748816
+export SOURCE_DATE_EPOCH=1552873996
 
 %install
+export SOURCE_DATE_EPOCH=1552873996
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1531748816
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library doRNG|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  doRNG || :
 
 
 %files
@@ -112,3 +104,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/doRNG/help/paths.rds
 /usr/lib64/R/library/doRNG/html/00Index.html
 /usr/lib64/R/library/doRNG/html/R.css
+/usr/lib64/R/library/doRNG/tests/testthat.R
+/usr/lib64/R/library/doRNG/tests/testthat/test-doRepro.r
+/usr/lib64/R/library/doRNG/tests/testthat/test-dorng.r
