@@ -4,19 +4,25 @@
 #
 Name     : R-doRNG
 Version  : 1.7.1
-Release  : 41
+Release  : 42
 URL      : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Summary  : Generic Reproducible Parallel Backend for 'foreach' Loops
 Group    : Development/Tools
 License  : GPL-2.0+
+Requires: R-bibtex
+Requires: R-registry
+Requires: R-xtable
+BuildRequires : R-bibtex
 BuildRequires : R-doMPI
 BuildRequires : R-doParallel
 BuildRequires : R-foreach
 BuildRequires : R-iterators
 BuildRequires : R-pkgmaker
 BuildRequires : R-rbenchmark
+BuildRequires : R-registry
 BuildRequires : R-rngtools
+BuildRequires : R-xtable
 BuildRequires : buildreq-R
 BuildRequires : texlive
 
@@ -32,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552873996
+export SOURCE_DATE_EPOCH=1556497634
 
 %install
-export SOURCE_DATE_EPOCH=1552873996
+export SOURCE_DATE_EPOCH=1556497634
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  doRNG || :
+R CMD check --no-manual --no-examples --no-codoc doRNG || :
 
 
 %files
