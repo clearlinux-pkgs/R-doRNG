@@ -1,12 +1,4 @@
 1.7.1
-R-bibtex
 R-doMPI
 R-doParallel
-R-foreach
-R-iterators
-R-pkgmaker
 R-rbenchmark
-R-registry
-R-rngtools
-R-xtable
-texlive
