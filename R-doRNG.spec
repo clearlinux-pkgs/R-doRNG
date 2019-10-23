@@ -4,18 +4,15 @@
 #
 Name     : R-doRNG
 Version  : 1.7.1
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doRNG_1.7.1.tar.gz
 Summary  : Generic Reproducible Parallel Backend for 'foreach' Loops
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-doMPI
-Requires: R-doParallel
 Requires: R-foreach
 Requires: R-iterators
 Requires: R-pkgmaker
-Requires: R-rbenchmark
 Requires: R-rngtools
 BuildRequires : R-doMPI
 BuildRequires : R-doParallel
@@ -25,6 +22,7 @@ BuildRequires : R-pkgmaker
 BuildRequires : R-rbenchmark
 BuildRequires : R-rngtools
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 reproducible parallel foreach loops, using independent
@@ -38,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562523208
+export SOURCE_DATE_EPOCH=1571819116
 
 %install
-export SOURCE_DATE_EPOCH=1562523208
+export SOURCE_DATE_EPOCH=1571819116
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
