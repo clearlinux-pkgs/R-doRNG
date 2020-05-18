@@ -4,7 +4,7 @@
 #
 Name     : R-doRNG
 Version  : 1.8.2
-Release  : 50
+Release  : 51
 URL      : https://cran.r-project.org/src/contrib/doRNG_1.8.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doRNG_1.8.2.tar.gz
 Summary  : Generic Reproducible Parallel Backend for 'foreach' Loops
@@ -32,21 +32,22 @@ reproducible parallel foreach loops, using independent
 
 %prep
 %setup -q -c -n doRNG
+cd %{_builddir}/doRNG
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580141832
+export SOURCE_DATE_EPOCH=1589783786
 
 %install
-export SOURCE_DATE_EPOCH=1580141832
+export SOURCE_DATE_EPOCH=1589783786
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
