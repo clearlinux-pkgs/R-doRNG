@@ -4,7 +4,7 @@
 #
 Name     : R-doRNG
 Version  : 1.8.6
-Release  : 75
+Release  : 76
 URL      : https://cran.r-project.org/src/contrib/doRNG_1.8.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doRNG_1.8.6.tar.gz
 Summary  : Generic Reproducible Parallel Backend for 'foreach' Loops
